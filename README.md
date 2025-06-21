@@ -1,3 +1,4 @@
+![basketball-scoreboard](https://github.com/user-attachments/assets/dd3f48ae-0b34-4a63-9747-5949430522c4)
 # Basketball Scoreboard React App
 
 A full-screen, real-time basketball scoreboard built with React, featuring:
