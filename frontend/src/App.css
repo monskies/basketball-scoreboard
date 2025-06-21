@@ -1,0 +1,190 @@
+/* BasketballTimer.css */
+
+/* Ensure full viewport usage */
+html, body, #root, .bt-container {
+    background: #111;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.bt-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto auto auto;
+  background: #111;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Header (row 1) */
+.bt-header {
+  grid-row: 1;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 1rem 0;
+  background: #222;
+  font-weight: bold;
+}
+
+/* Scoreboard (row 2) */
+.bt-scoreboard {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 0;
+  height: 100%;
+}
+
+.bt-team, .bt-center {
+  padding: 0;
+  margin: 0;
+}
+
+.bt-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.bt-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+}
+
+.bt-clock-box {
+  width: 200vw;
+  /* center takes wider space, main timer scaled accordingly */
+  max-width: 700px;
+  height: 15vh;
+  background: #222;
+  border-radius: 0;
+  display: flex;
+  margin-top: 10px ;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', monospace;
+  font-size: 9rem;
+  box-shadow: none;
+}
+
+.bt-clock-box-shotclock{
+  width: 70vw;
+  /* center takes wider space, main timer scaled accordingly */
+  max-width: 250px;
+  height: 10vh;
+  background: #222;
+  border-radius: 0;
+  display: flex;
+  margin-top: 10px ;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', monospace;
+  font-size: 4rem;
+  box-shadow: none;
+}
+.bt-clock-box-shotclock-setter {
+  width: 30vw;
+  /* center takes wider space, main timer scaled accordingly */
+  max-width: 150px;
+  height: 7vh;
+  background: #222;
+  border-radius: 0;
+  display: flex;
+  margin-top: 10px ;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', monospace;
+  font-size: 2rem;
+  box-shadow: none;
+}
+
+/* Controls rows (settings, play controls, fullscreen) */
+.bt-settings, .bt-controls, .bt-fullscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 0.5rem;
+  grid-column: 1 / -1;
+}
+
+.bt-settings {
+  grid-row: 3;
+}
+
+.bt-controls {
+  grid-row: 4;
+}
+
+.bt-fullscreen {
+  grid-row: 5;
+  background: #444;
+  color: #05ad29;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* Inputs and labels */
+.bt-settings label, .bt-shot-edit-panel label {
+  margin: 0 0.5rem;
+  font-size: 1rem;
+}
+
+.bt-settings input, .bt-shot-input {
+  width: 50px;
+  margin-left: 0.5rem;
+  padding: 0.25rem;
+  background: #111;
+  border: 1px solid #555;
+  color: #fff;
+  text-align: center;
+}
+
+.bt-shot-labels, .bt-shot-edit-panel {
+  display: flex;
+  margin-top: 10px;
+  gap: 0;
+}
+
+.bt-shot-label {
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+/* Team names and stats */
+.bt-team-name {
+  font-size: 4rem;
+  margin: 0.5rem 0;
+}
+
+.bt-score {
+  font-size: 15rem;
+  margin: 0;
+}
+
+.bt-sub-label {
+  font-size: 2rem;
+  margin: 0.25rem 0;
+  text-align: center;
+}
+.bt-sub-label-number {
+  font-size: 4rem;
+  margin: 0.25rem 0;
+  text-align: center;
+}
+
+/* Disable selection */
+.bt-container, .bt-container * {
+  user-select: none;
+}
