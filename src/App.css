@@ -99,7 +99,7 @@ html, body, #root, .bt-container {
 .bt-quarter-label {
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 5vh;
   color: #fff;
   padding: 1rem;
   margin-top: 1rem;
@@ -114,7 +114,7 @@ html, body, #root, .bt-container {
   align-items: center;
   justify-content: center;
   font-family: 'Orbitron', monospace;
-  font-size: 6rem;
+  font-size: 15vh;
   font-weight: bold;
   color: hsl(118, 100%, 78%); 
 }
@@ -128,14 +128,14 @@ html, body, #root, .bt-container {
 .bt-clock-box {
   /* center takes wider space, main timer scaled accordingly */
   max-width: 30vw;
-  max-height: 20vh;
+  max-height: 14vh;
   background: #000000;
   border-radius: 0;
   display: flex;
   margin-top: 10px ;
   align-items: center;
   justify-content: center;
-  font-size: 12vw;
+  font-size: 8vw;
   box-shadow: none;
 }
 
@@ -153,7 +153,7 @@ html, body, #root, .bt-container {
   box-shadow: none;
 }
 .bt-shot-clock{ /* Digital-style font */
-  font-size: 10vw;
+  font-size: 6vw;
   font-family: 'Amaranth', sans-serif;
   font-weight: bold;
   color: #ff3c00; /* Bright red/orange */
@@ -173,7 +173,7 @@ html, body, #root, .bt-container {
   align-items: center;
   justify-content: center;
   font-family: 'Orbitron', monospace;
-  font-size: 3vw;
+  font-size: 2vw;
   box-shadow: none;
   overflow: hidden;
 }
@@ -181,13 +181,49 @@ html, body, #root, .bt-container {
 /* Controls rows (settings, play controls, fullscreen) */
 .bt-settings, .bt-controls {
   display: flex;
+  margin-top: 1vh;
   justify-content: center;
   align-items: center;
   gap: 0;
-  padding: 0.5rem;
   grid-column: 1 / -1;
 }
+.bt-btn-play{
+  background-color: #918383;
+  border: none;
+  color: #fff;
+  font-size: 3vh;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.bt-btn-reset{
+  background-color: #b1a8a8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.reset{
+  font-size: 4vh;
+  color: #fff;
+}
+.settings{
+  font-size: 4vh;
+  color: #fff;
+}
 
+.bt-btn-settings {
+  background-color: #b1a8a8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
 .bt-settings {
   grid-row: 3;
 }
@@ -195,8 +231,6 @@ html, body, #root, .bt-container {
 .bt-controls {
   grid-row: 5;
 }
-
-
 
 /* Inputs and labels */
 .bt-settings label, .bt-shot-edit-panel label {
@@ -207,16 +241,14 @@ html, body, #root, .bt-container {
 .bt-settings input, .bt-shot-input {
   width: 50px;
   margin-left: 0.5rem;
-  padding: 0.25rem;
-  background: #ffffff;
+  background: #d66565;
   border: 1px solid #555;
-  color: #000000;
+  color: #a87c7c;
   text-align: center;
 }
 
 .bt-shot-labels, .bt-shot-edit-panel {
   display: flex;
-  margin-top: 10px;
   gap: 0;
 }
 
@@ -329,7 +361,6 @@ html, body, #root, .bt-container {
   font-weight: bold;
 }
 
-
 .bt-team-stats{
   display: flex;
   background-color: hsl(0, 0%, 0%);
@@ -400,14 +431,6 @@ html, body, #root, .bt-container {
 /* Disable selection */
 .bt-container, .bt-container * {
   user-select: none;
-}
-.bt-btn-settings {
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-  margin-left: 10px;
 }
 
 .bt-settings-wrapper {

@@ -553,12 +553,14 @@ function BasketballTimer() {
               QUARTER
             </span>
           </div>
+
           {/* Possession Arrow */}
           <div className="bt-possession" onClick={togglePossession}>
             {possession === 'home' ? '➡' : '⬅'}
           </div>
           
           <div className="bt-clock-box bt-main-timer">{fmtMain()}</div>
+
           <div className="bt-clock-box-shotclock bt-shot-clock">{fmtShot()}</div>
           
           <div className="bt-shot-labels">
@@ -576,6 +578,75 @@ function BasketballTimer() {
               {customShot14}
             </div>
           </div>
+
+          <div className="bt-controls" style={noSelect}>
+              {/*<button className="bt-btn-start" onClick={startClocks}>Start</button>*/}
+
+              <button
+                className="bt-btn-play"
+                onClick={
+                  toggleClocks
+                }
+              >
+                {isRunning ? '⏸' : '▶'}
+              </button>
+
+              <button className="bt-btn-reset" onClick={handleSetAndReset}>
+                <i className="material-icons reset">&#xe8b3;</i>
+              </button>
+
+              <div className="bt-settings-wrapper">
+                <button className="bt-btn-settings" onClick={() => setShowSettings(!showSettings)}>
+                  <i className="material-icons settings">settings</i>
+                </button>
+                
+                {showSettings && (
+                  <div className="bt-settings-popup">
+                    <label>
+                      Minutes:
+                      <input
+                        type="number"
+                        min="0"
+                        value={inputMinutes}
+                        onChange={e => setInputMinutes(Number(e.target.value))}
+                      />
+                    </label>
+                    <label>
+                      Seconds:
+                      <input
+                        type="number"
+                        min="0"
+                        max="59"
+                        value={inputSeconds}
+                        onChange={e => setInputSeconds(Number(e.target.value))}
+                      />
+                    </label>
+                    <label>
+                      Set 24s:
+                      <input
+                        type="number"
+                        value={customShot24}
+                        onChange={(e) => setCustomShot24(Number(e.target.value))}
+                        className="bt-shot-input"
+                      />
+                    </label>
+
+                    <label>
+                      Set 14s:
+                      <input
+                        type="number"
+                        value={customShot14}
+                        onChange={(e) => setCustomShot14(Number(e.target.value))}
+                        className="bt-shot-input"
+                      />
+                    </label>
+                  </div>
+                  
+                  
+                )}
+              </div>
+          </div> 
+
         </div>
 
         {/* VISITOR TEAM */}
@@ -657,82 +728,6 @@ function BasketballTimer() {
               >{visitorTO}</p>
             </div>
           </div>
-        </div>
-
-      </div>
-
-      <div className="bt-controls" style={noSelect}>
-        {/*<button className="bt-btn-start" onClick={startClocks}>Start</button>*/}
-
-        <button
-          className="bt-btn-play"
-          onClick={
-            toggleClocks
-          }
-        >
-          {isRunning ? '⏸' : '▶'}
-        </button>
-
-        {/*<button className="bt-btn-pause" onClick={pauseClocks}>
-          <i className="material-icons">&#xe034;</i>
-        </button>*/}
-
-        <button className="bt-btn-reset" onClick={handleSetAndReset}>
-          <i className="material-icons">&#xe8b3;</i>
-        </button>
-        {/*<button className="bt-fullscreen" onClick={() => containerRef.current.requestFullscreen()} style={noSelect}>
-          <i class="material-icons">&#xe5d0;</i>
-        </button>*/}
-
-        <div className="bt-settings-wrapper">
-          <button className="bt-btn-settings" onClick={() => setShowSettings(!showSettings)}>
-            <i className="material-icons">settings</i>
-          </button>
-          
-          {showSettings && (
-            <div className="bt-settings-popup">
-              <label>
-                Minutes:
-                <input
-                  type="number"
-                  min="0"
-                  value={inputMinutes}
-                  onChange={e => setInputMinutes(Number(e.target.value))}
-                />
-              </label>
-              <label>
-                Seconds:
-                <input
-                  type="number"
-                  min="0"
-                  max="59"
-                  value={inputSeconds}
-                  onChange={e => setInputSeconds(Number(e.target.value))}
-                />
-              </label>
-              <label>
-                Set 24s:
-                <input
-                  type="number"
-                  value={customShot24}
-                  onChange={(e) => setCustomShot24(Number(e.target.value))}
-                  className="bt-shot-input"
-                />
-              </label>
-
-              <label>
-                Set 14s:
-                <input
-                  type="number"
-                  value={customShot14}
-                  onChange={(e) => setCustomShot14(Number(e.target.value))}
-                  className="bt-shot-input"
-                />
-              </label>
-            </div>
-            
-            
-          )}
         </div>
       </div>
     </div>

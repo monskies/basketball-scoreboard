@@ -8,14 +8,11 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-<<<<<<< HEAD
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg}']
       },
       injectRegister: 'auto',
       manifestFilename: 'manifest.webmanifest',
-=======
->>>>>>> origin/main
       manifest: {
         name: 'Basketball Scoreboard',
         short_name: 'Scoreboard',
@@ -34,14 +31,9 @@ export default defineConfig({
         ],
         start_url: '.',
         display: 'standalone',
-<<<<<<< HEAD
         orientation: 'landscape',
         background_color: '#000000',
         theme_color: '#333333',
-=======
-        background_color: '#000000',
-        theme_color: '#333333'
->>>>>>> origin/main
       }
     })
   ],
